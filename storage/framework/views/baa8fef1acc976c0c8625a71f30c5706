@@ -1,0 +1,52 @@
+<?php $__env->startSection('content'); ?>
+<div class="clearfix"></div>
+<div class="col-md-9 col-xs-offset-1" style="margin-top:100px;">
+	<div class="panel panel-primary">
+	<?php if(isset($nguoidung)): ?>
+		<div class="panel-heading">Thêm bài tập</div>
+	<?php endif; ?>
+		
+		<div class="panel-body">
+
+			<table class="table table-bordered table-hover" id="table">	
+				<p>Date: <input type="date" data-date="" data-date-format="DD MMMM YYYY" value="2015-08-09"></p>
+				<span name="nhomco">Nhóm cơ</span></br>
+				<div id="divCheckbox" style="display: none;">
+				<tr>
+							<td style="width:100px;">Tên bài tập </td>
+							<td style="width: 100px;">khối lượng(kg)</td>
+							<td style="width: 100px;">set </td>	
+							<td style="width: 100px;">số reps </td>	
+						
+				</tr>
+				<tr>
+							<td style="width:100px;">Tên bài tập </td>
+							<td style="width: 100px;">khối lượng(kg)</td>
+							<td style="width: 100px;">set </td>	
+							<td style="width: 100px;">số reps </td>	
+							
+				<tr>
+				
+			</table>	
+			<button   id="btn_themcot"class="btn btn-primary">Thêm  cột</button>
+			<button   id="btn_xoacot"class="btn btn-primary"  onclick="return window.confirm('Ban co muon xoa khong?');">xóa cột</button>
+		</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<script src="<?php echo e(url('public/fontend/js/mindmup-editabletable.js')); ?>"></script>
+
+<script type="text/javascript">
+	$('#btn_themcot').click(function() {
+			$('#table').editableTableWidget();
+		$('#table').append('<tr><td placeholder="Tên bài tập" name ="minh"></td><td>Tên bài tập </td><td>Tên bài tập </td><td>Tên bài tập </td></tr>');
+			$('#table').editableTableWidget();
+	});
+	$('#btn_xoacot').click(function() {
+		$('#table').find("tr:nth-child(2)").each(function(){$(this).remove()});
+	});
+    
+
+</script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

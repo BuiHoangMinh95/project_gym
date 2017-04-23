@@ -1,0 +1,25 @@
+<?php $__env->startSection('content'); ?>
+
+			<div class="trainers-section wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				<div class="container">
+
+				<section style="padding: 25px;">
+				<ul class="lb-album">
+				<?php foreach($giaoan as $rows): ?>
+					<li class="grid">
+							<div class="lb-overlay" id="image-2">
+									<img src="<?php echo e(url($rows->hinhanh)); ?>" class="img-responsive" alt=""/>
+									<div class="class-text  hvr-bounce-to-bottom">
+										<h4><a href="giaoan/<?php echo e($rows->id); ?>" style="text-decoration: none;text-align: center;"><?php echo e($rows->ten); ?></a> </h4>
+										<h2 style="color: whilte"><?php echo e($rows->tacgia); ?></h2>
+										<p> Giảm cân , Tăng sức mạnh , rèn luyện thể chất</p>
+									</div>
+							</div>
+					</li>
+				<?php endforeach; ?>;	
+				</ul>
+</section>
+</div>
+		
+<?php $__env->stopSection(); ?>		
+<?php echo $__env->make('frontend.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

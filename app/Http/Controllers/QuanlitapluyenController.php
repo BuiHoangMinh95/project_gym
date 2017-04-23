@@ -104,12 +104,12 @@ class QuanlitapluyenController extends TrangchuController {
 		 		$qltldd->delete($id);
 		 		return  redirect("/quanlibaitap");
 	}
-	
+
 //sua ngaytap
 	public function sua_ngaytap_get($id){
 				$baitap = quanlibaitap::where('idbaitap_ngaytap',$id)->get();
 				$ngaytap = tbl_quanlingaytap::find($id);
-		 		return view('frontend.suangaytap');
+		 		return view('frontend.suangaytap',['baitap'=>$baitap,'ngaytap'=>$ngaytap]);
 	}
 	public function sua_ngaytap($id,Request $request){
 				$ngaytap= tbl_quanlingaytap::find($id);	
@@ -117,9 +117,16 @@ class QuanlitapluyenController extends TrangchuController {
 
 				$ngay = $request->ngay;
 				$nhomco = $request->nhomco;
-				$ngaytap->ngay = $ngay;
-				$ngaytap->nhomco = $nhomco;	
+				$ten = $request->ten;
+				$khoiluong = $request->khoiluong;
+				$solan = $request->so_lan;
+				$sohiep = $request->so_hiep;
+				 $ngaytap->ngay = $ngay;
+				 $ngaytap->nhomco = $nhomco;
+				 $ngaytap->userid = Auth::user()->id;
+				 $ngaytap->save();
 				 $id_ngaytap = $ngaytap->id;
+				 
 				 $lengthBaitap = count($khoiluong);
 				 for($i = 0; $i < $lengthBaitap; $i++){
 				 	$baitap = new quanlibaitap();
