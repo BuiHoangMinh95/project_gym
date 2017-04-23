@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login page</title>
+    <meta charset="utf-8">
+<link href="{{url('public/admin/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="col-md-4 col-xs-offset-4" style="margin-top:20px;">     
+        <div class="panel panel-primary">
+            <div class="panel-heading">Login</div>
+            <div class="panel-body">
+                <form method="post" action="">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <!-- row -->
+                <div class="row" style="margin-top:5px;">
+                    <div class="col-md-3">email</div>
+                    <div class="col-md-9">
+                        <input type="email" name="email" required class="form-control">
+                    </div>
+                </div>
+                <!-- end row -->
+                <!-- row -->
+                <div class="row" style="margin-top:5px;">
+                    <div class="col-md-3">Password</div>
+                    <div class="col-md-9">
+                        <input type="password" name="password" required class="form-control">
+                    </div>
+                </div>
+                <!-- end row -->
+                <!-- row -->
+                <div class="row" style="margin-top:5px;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9">
+                        <input type="submit" class="btn btn-primary" value="Login">
+                        <input type="reset" class="btn btn-danger" value="Reset">
+                    </div>
+                </div>
+                <!-- end row -->
+                </form>
+            </div>
+        </div>
+       <div class="col-lg-12">
+                         @if(Session::has('err'))
+                            <div class="alert alert-danger">
+                                    {!!Session::get('err')!!}
+                            </div>
+                         @endif
+        </div>
+    </div>
+</div>
+</body>
+</html>

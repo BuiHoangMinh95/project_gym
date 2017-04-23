@@ -1,0 +1,149 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Flat Gym a Sports Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+
+<link href="{{url('public/fontend/css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
+<link href="{{url('public/fontend/css/style.css')}}" rel='stylesheet' type='text/css' />
+<link href="{{url('public/fontend/css/bootstrap-year-calendar.css')}}" rel='stylesheet' type='text/css' />
+<link href="{{url('public/fontend/css/bootstrap-year-calendar.min.css')}}" rel='stylesheet' type='text/css' />
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script src="{{url('public/fontend/js/jquery-1.11.1.min.js')}}"></script>
+<script src="{{url('public/fontend/js/bootstrap.js')}}"></script>
+<script src="{{url('public/fontend/js/bootstrap-year-calendar.js')}}"></script>
+<script src="{{url('public/fontend/js/bootstrap-year-calendar.min.js')}}"></script>
+<script src="{{url('public/fontend/js/mindmup-editabletable.js')}}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!--web-fonts-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--//web-fonts-->
+<script src="{{url('public/fontend/js/responsiveslides.min.js')}}"></script>
+ <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	nav: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script>
+<!--JS for animate-->
+	<link href="{{url('public/fontend/css/animate.css')}}" rel="stylesheet" type="text/css" media="all">
+	<script src="{{url('public/fontend/js/wow.min.js')}}"></script>
+		<script>
+			new WOW().init();
+		</script>
+	<!--//end-animate-->
+
+
+</head>
+<body>
+<!-- headter -->
+	
+  <nav class="navbar navbar-inverse navbar-fixed-top"  >
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{url('/trangchu')}}"><img src="{{url('public/fontend/images/e.png')}}"/> Flat Gym</a>
+    </div>
+    <ul class="nav navbar-nav col-lg-5"  style="float: right;">
+      <li ><a href="{{url('/trangchu')}}"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+        <li ><a href="#">Tin Tức</a></li>
+        <li><a class="nav-in" href="{{url('/giaoan')}}"><i class="glyphicon glyphicon-book"></i>Giáoán</a></li>
+     
+				 @if(!isset($nguoidung))
+				 <li><a href="{{url('/dangnhap')}}"><span data-letters=" Đăng nhập"> <i class="glyphicon glyphicon-log-in"></i> Đăng nhập </span></a></li>
+				 <li><a href="{{url('/dangki')}}"><span data-letters=" Đăng kí"><i class="glyphicon glyphicon-pencil"></i> Đăng ki </span></a></li>
+				@else
+				 <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Quản lí tập luyện của bạn
+			        <span class="caret"></span></a>
+			        <ul class="dropdown-menu">
+			          <li><a href="{{url('/quanlibaitap')}}">Quản lí bài tập</a></li>
+			          <li><a href="#">Quản lí dinh dưỡng</a></li>
+			          <li><a href="#">Page 1-3</a></li>
+			        </ul>
+			      </li>
+     		
+				 <li><a href="#"><i class="glyphicon glyphicon-user"  aria-hidden="true"></i> <span>hello</span> <STRONG style="font-size: 20px;">{{$nguoidung->name}}</STRONG> </a></li>
+				 
+				 <li><a href="{{url('/logout')}}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+
+				 @endif()
+    </ul>
+  </div>
+</nav>
+			 @yield('content')
+
+<!---footer--->
+		<div class="footer-section">
+			<div class="container">
+			<div class="footer-grids">
+				<div class="col-md-3 footer-grid wow fadeInDownBig animated animated" data-wow-delay="0.4s">
+					<h4>About</h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipig elit. Praesent vestibulummolestie lacus. Aenean nonummy hendrerit mauris. Praesent vestibulummolestie lacus.</p>
+				</div>
+				<div class="col-md-3 footer-grid wow fadeInLeft animated animated" data-wow-delay="0.4s">
+					<h4>Categories</h4>
+					<ul>
+						<li>Beauty</li>
+						<li>Diet & Fitness</li>
+						<li>Lifestyle</li>
+						<li>Help Desk</li>
+						<li>Pregnancy</li>
+						<li>Performance Metrics</li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid wow fadeInUpBig animated animated" data-wow-delay="0.4s">
+				<h4>Work</h4>
+					<ul>
+						<li>Customer Support</li>
+						<li>Platinum Support</li>
+						<li>Gold Support</li>
+						<li>Training</li>
+						<li>Workshops</li>
+						<li>Online Training</li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid wow fadeInRight animated animated" data-wow-delay="0.4s">
+					<h4>Contact</h4>
+					<p>7801 Marmora Road</p>
+					<p>Glasgow, DO5 98GR.</p>
+					<p>Freephone: +1 800 558 8990</p>
+					<p>Telephone: +1 659 803 9035</p>
+					<p>FAX: + 1 314 889 9898</p>
+					<a href="mailto:example@mail.com"> example@mail.com</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			</div>
+		</div>	
+	<!---footer--->
+	<!--copy-->
+	<div class="copy-section wow fadeInDownBig animated animated" data-wow-delay="0.4s">
+		<div class="container">
+				<div class="social-icons">
+					<a href="#"><i class="icon"></i></a>
+					<a href="#"><i class="icon1"></i></a>
+					<a href="#"><i class="icon2"></i></a>
+					<a href="#"><i class="icon3"></i></a>
+				</div>
+			<p>&copy; 2016 Flat Gym . All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+		</div>
+	</div>
+	<!--copy-->
+</body>
+</html>
